@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="span8">
+    <div class="hero-unit">
+      <h1>Welcome!</h1>
+      <br/>
+      <p class="lead">
+        This is an app for managing your thesis. Sign up as a professor or student and enjoy doing your thesis.
+        Get started and create your thesis now!
+      </p>
+      <p>
+        <%= link_to 'New thesis', new_thesis_path, class: 'btn btn-primary btn-large' if professor? %>
+      </p>
+    </div>
+  </div>
+  <div class="span4 text-center">
+    <%= image_tag 'meme.png' %>
+  </div>
+</div>

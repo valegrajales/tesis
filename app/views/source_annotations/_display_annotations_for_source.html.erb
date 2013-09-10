@@ -1,0 +1,17 @@
+<div class="list">
+  <ul>
+    <% object.each do |source_annotation| %>
+        <li>
+          <p class="lead"><%= source_annotation.title %></p>
+          <p class="annotation-content">
+            <% if source_annotation.content.length < 300 %>
+                <%= source_annotation.content %>
+            <% else %>
+                <%= source_annotation.content[0..299] %> (...).
+            <% end %>
+            <%= link_to 'Show.', source_annotation %>
+          </p>
+        </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,19 @@
+<h1 class="text-center">New annotation</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@source_annotation) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="control-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'span6' %>
+          <%= f.label :content %>
+          <%= f.text_area :content, class: 'span6' %>
+          <%= f.hidden_field :source_id %>
+        </div>
+
+        <div class="control-group">
+        <%= f.submit 'Create annotation', class: 'btn btn-primary' %>
+        </div>
+    <% end %>
+  </div>
+</div>

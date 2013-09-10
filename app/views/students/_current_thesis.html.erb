@@ -1,0 +1,21 @@
+<div class="list">
+  <ul>
+    <li>
+      <p class="lead"><%= object.title %></p>
+      <p class="annotation-content">
+        <strong>Description: </strong><%= object.description %>
+      </p>
+      <p class="annotation-content">
+        <strong>By: </strong>
+        <% object.students.each_with_index do |student, index| %>
+            <% if index < object.students.count - 1 %>
+                <%= "#{student.name}, "%>
+            <% else %>
+                <%= student.name %>
+            <% end %>
+        <% end %>
+      </p>
+      <p><%= link_to 'Show', object %></p>
+    </li>
+  </ul>
+</div>

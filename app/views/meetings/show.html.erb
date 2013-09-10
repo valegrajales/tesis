@@ -1,0 +1,20 @@
+<h1 class="text-center">Meeting</h1>
+<div class="row">
+  <div class="span12">
+    <h3>Meeting date:</h3>
+    <p class="lead">
+      <%= @meeting.meeting_date %>
+    </p>
+    <h3>Annotations:</h3>
+    <% if @meeting.meeting_annotations.empty? %>
+        <p class="lead">No annotations for this meeting.</p>
+    <% else %>
+        <%= render 'meeting_annotations/display_annotations_for_source', object: @meeting.meeting_annotations %>
+    <% end %>
+    <br/>
+    <%= link_to 'New annotation', new_meeting_annotation_path(meeting_id: @meeting.id), class: 'btn btn-success' %>
+    <br/><br/>
+    <%= link_to 'Edit', edit_meeting_path(@meeting), class: 'btn btn-primary' %> |
+    <%= link_to 'Back to thesis', thesis_path(@meeting.thesis), class: 'btn btn-info' %>
+  </div>
+</div>

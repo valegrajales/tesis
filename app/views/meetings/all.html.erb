@@ -1,0 +1,13 @@
+<h1 class="text-center">All meetings</h1>
+<div class="row">
+  <div class="span12">
+    <% if @found_meetings.empty? %>
+        <p class="lead">No meetings for this thesis.</p>
+    <% else %>
+        <%= render 'display_meetings', object: @found_meetings %>
+    <% end %>
+    <%= link_to 'New Meeting', new_meeting_path(thesis_id: params[:thesis_id]), class: 'btn btn-primary' %>
+    <br/><br/>
+    <%= link_to 'Back to thesis', thesis_path(params[:thesis_id]), class: 'btn btn-info' %>
+  </div>
+</div>

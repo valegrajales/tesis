@@ -1,0 +1,12 @@
+<h1 class="text-center">All annotations</h1>
+<div class="row">
+  <div class="span12">
+    <% if @source_annotations.empty? %>
+        <p class="lead">No annotations for this source.</p>
+    <% else %>
+        <%= render 'display_annotations_for_source', object: @source_annotations %>
+    <% end %>
+    <br/>
+    <%= link_to 'Back to source', source_path(params[:source_id]), class: 'btn btn-info' %>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<h1 class="text-center"><%= @source_annotation.title %></h1>
+<div class="row">
+  <div class="span12">
+    <p class="lead"><%= @source_annotation.content %></p>
+    <%= link_to 'List all', source_annotations_all_path(@source_annotation.source.id), class: 'btn' %>
+    <%= link_to 'Back to source', @source_annotation.source, class: 'btn btn-info' %>
+  </div>
+</div>

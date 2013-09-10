@@ -1,0 +1,27 @@
+<h1 class="text-center">New meeting annotation</h1>
+<div class="row">
+  <% if @meeting_annotation.nil? %>
+      <div class="span12">
+        <p class="lead">Go back to the meeting you wish to create the annotation for and click "New annotation".</p>
+      </div>
+  <% else %>
+      <div class="span6 offset3">
+        <%= form_for(@meeting_annotation, html: { multipart: true }) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <div class="control-group">
+              <%= f.label :title %>
+              <%= f.text_field :title, class: 'span6' %>
+              <%= f.label :content %>
+              <%= f.text_area :content, class: 'span6' %>
+              <%= label_tag 'Attachment' %>
+              <%= file_field 'upload', 'datafile' %>
+              <%= f.hidden_field :meeting_id %>
+            </div>
+
+            <div class="control-group">
+              <%= f.submit 'Create annotation', class: 'btn btn-primary' %>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
+</div>

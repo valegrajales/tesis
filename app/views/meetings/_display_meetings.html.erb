@@ -1,0 +1,21 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Meeting date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% object.each do |meeting| %>
+      <tr>
+        <td><%= meeting.meeting_date %></td>
+        <td><%= link_to 'Show', meeting, class: 'btn' %></td>
+        <td><%= link_to 'Edit', edit_meeting_path(meeting), class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Delete', meeting, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        <td><%= link_to 'New annotation', new_meeting_annotation_path(meeting_id: meeting.id), class: 'btn btn-success' %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

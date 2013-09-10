@@ -1,0 +1,50 @@
+<h1 class="text-center"><%= @thesis.title %></h1>
+
+<div class="row">
+  <div class="span12">
+    <h3>Description:</h3>
+    <p class="lead"><%= @thesis.description %></p>
+    <h3>Authors:</h3>
+    <p class="lead">
+      <% @thesis.students.each_with_index do |student, index| %>
+          <% if index < @thesis.students.count - 1 %>
+              <%= link_to student.name, student %>,
+          <% else %>
+              <%= link_to student.name, student %>
+          <% end %>
+      <% end %>
+    </p>
+    <h3>Teacher:</h3>
+    <p class="lead"><%= @thesis.teacher %></p>
+
+    <h3>Sources</h3>
+    <div class="btn-group">
+      <a href="<%= sources_all_path(@thesis.id) %>" class="btn">
+        List all sources
+        <i class="icon-list"></i>
+      </a>
+    </div>
+    <%= link_to 'Register a new source', new_source_path(thesis_id: @thesis.id), class: 'btn btn-primary' %>
+
+    <h3>Products</h3>
+    <div class="btn-group">
+      <a href="<%= products_all_path(@thesis.id) %>" class="btn">
+        List all products
+        <i class="icon-list"></i>
+      </a>
+    </div>
+    <%= link_to 'Register a new product', new_product_path(thesis_id: @thesis.id), class: 'btn btn-primary' %>
+
+    <h3>Meetings</h3>
+    <div class="btn-group">
+      <a href="<%= meetings_all_path(@thesis.id) %>" class="btn">
+        List all meetings
+        <i class="icon-list"></i>
+      </a>
+    </div>
+    <%= link_to 'Register a new meeting', new_meeting_path(thesis_id: @thesis.id), class: 'btn btn-primary' %>
+
+    <br/><br/>
+    <%= link_to 'List all', theses_path, class: 'btn btn-info' %>
+  </div>
+</div>

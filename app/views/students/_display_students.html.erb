@@ -1,0 +1,18 @@
+<div class="list">
+  <ul>
+    <% object.each do |student| %>
+        <li>
+          <p class="lead">
+            <%= student.name %> - (<span class="muted"><%= student.username %></span>)
+          </p>
+          <p class="annotation-content">
+            <strong>Major: </strong><%= student.major %>
+          </p>
+          <p class="annotation-content">
+            <strong>Code: </strong><%= student.student_code %>
+          </p>
+          <p><%= link_to 'Show', student %></p>
+        </li>
+    <% end %>
+  </ul>
+</div>

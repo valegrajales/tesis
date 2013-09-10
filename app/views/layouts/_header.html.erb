@@ -1,0 +1,38 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to 'Thesis', root_path, id: 'logo', class: 'brand' %>
+      <nav>
+        <ul class="nav pull-right">
+          <li>
+            <a href="<%= about_path %>">
+              About <i class="icon-info-sign"></i>
+            </a>
+          </li>
+          <% if signed_in? %>
+              <% if professor? %>
+                  <li>
+                    <%= link_to "Theses <i class=\"icon-list\"></i>".html_safe, theses_path %>
+                  </li>
+                  <li><%= link_to "Students <i class=\"icon-user\"></i>".html_safe, students_path %></li>
+              <% else %>
+                  <li>
+                    <%= link_to "Me <i class=\"icon-user\"></i>".html_safe, current_student_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Thesis <i class=\"icon-pencil\"></i>".html_safe, current_student_thesis_path %>
+                  </li>
+              <% end %>
+              <li>
+                <%= link_to "Sign out <i class=\"icon-lock\"></i>".html_safe, logout_path, method: :delete %>
+              </li>
+          <% else %>
+              <li>
+                <%= link_to "Sign in <i class=\"icon-lock\"></i>".html_safe, signin_path %>
+              </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

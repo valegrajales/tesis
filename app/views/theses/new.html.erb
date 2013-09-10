@@ -1,0 +1,25 @@
+<h1 class="text-center">New thesis</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@thesis) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="control-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'span6' %>
+          <%= f.label :description %>
+          <%= f.text_area :description, class: 'span6' %>
+          <%= label_tag :student %>
+          <%= text_field_tag :student, nil, class: 'span6',
+                           'data-provide' => 'typeahead',
+                           'data-items' => '5',
+                           'data-source' => @students_list %>
+          <%= f.label :teacher %>
+          <%= f.text_field :teacher, class: 'span6' %>
+        </div>
+
+        <div class="control-group">
+          <%= f.submit 'Create thesis', class: 'btn btn-primary' %>
+        </div>
+    <% end %>
+  </div>
+</div>

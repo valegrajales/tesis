@@ -1,0 +1,12 @@
+<h1 class="text-center">All students</h1>
+<div class="row">
+  <div class="span12">
+    <% if @students.empty? %>
+        <p class="lead">No students.</p>
+    <% else %>
+        <%= render 'display_students', object: @students %>
+    <% end %>
+    </br>
+    <%= link_to 'Add a student', new_student_path, class: 'btn btn-primary' %>
+  </div>
+</div>

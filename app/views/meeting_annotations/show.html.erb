@@ -1,0 +1,15 @@
+<h1 class="text-center"><%= @meeting_annotation.title %></h1>
+<div class="row">
+  <div class="span12">
+    <p class="lead"><%= @meeting_annotation.content %></p>
+    <% unless @meeting_annotation.attachment_url.blank? %>
+        <div class="btn-group">
+          <a href="<%= @meeting_annotation.attachment_url %>" class="btn">
+            Download attachment
+            <i class="icon-download-alt"></i>
+          </a>
+        </div>
+    <% end %>
+    <%= link_to 'Go back to meeting', meeting_path(@meeting_annotation.meeting_id), class: 'btn btn-info' %>
+  </div>
+</div>

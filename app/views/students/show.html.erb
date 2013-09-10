@@ -1,0 +1,20 @@
+<h1 class="text-center"><%= @student.name %></h1>
+
+<div class="row">
+  <div class="span12">
+    <h3>Major:</h3>
+    <p class="lead"><%= @student.major %></p>
+    <h3>Username:</h3>
+    <p class="lead"><%= @student.username %></p>
+    <h3>Age:</h3>
+    <p class="lead"><%= @student.age %></p>
+    <h3>Student code:</h3>
+    <p class="lead"><%= @student.student_code %></p>
+    <h3>Current thesis</h3>
+    <% if @student.thesis.nil? %>
+        <p class="lead">No thesis for the moment.</p>
+    <% else %>
+        <%= render 'current_thesis', object: @student.thesis %>
+    <% end %>
+  </div>
+</div>

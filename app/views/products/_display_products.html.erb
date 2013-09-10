@@ -1,0 +1,10 @@
+<div class="list">
+  <ul>
+    <% object.each do |product| %>
+        <li>
+          <p class="lead"><%= product.description %></p>
+          <p><%= link_to 'Show', product %></p>
+        </li>
+    <% end %>
+  </ul>
+</div>

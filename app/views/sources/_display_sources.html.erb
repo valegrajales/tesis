@@ -1,0 +1,16 @@
+<div class="list">
+  <ul>
+    <% object.each do |source| %>
+        <li>
+          <p class="lead"><%= source.title %></p>
+          <p class="annotation-content">
+            <%= source.description %>
+          </p>
+          <p class="annotation-content">
+            <strong>Reference: </strong><%= source.reference %>
+          </p>
+          <p><%= link_to 'Show', source %></p>
+        </li>
+    <% end %>
+  </ul>
+</div>

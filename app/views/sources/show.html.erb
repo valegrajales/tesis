@@ -1,0 +1,29 @@
+<h1 class="text-center"><%= @source.title %></h1>
+<div class="row">
+  <div class="span12">
+    <h3>Description:</h3>
+    <p class="lead"><%= @source.description %></p>
+    <h3>Reference:</h3>
+    <p class="lead"><%= @source.reference %></p>
+    <% unless @source.attachment_url.blank? %>
+        <div class="btn-group">
+          <a href="<%= @source.attachment_url %>" class="btn">
+            Download attachment
+            <i class="icon-download-alt"></i>
+          </a>
+        </div>
+    <% end %>
+    <h3>Annotations</h3>
+    <div class="btn-group">
+      <a href="<%= source_annotations_all_path(@source.id) %>" class="btn">
+        List all annotations
+        <i class="icon-list"></i>
+      </a>
+    </div>
+    <%= link_to 'Register a new annotation', new_source_annotation_path(source_id: @source.id), class: 'btn btn-primary' %>
+
+    <br/><br/>
+    <%= link_to 'List all', sources_all_path(@source.thesis.id), class: 'btn' %>
+    <%= link_to 'Back to thesis', @source.thesis, class: 'btn btn-info' %>
+  </div>
+</div>

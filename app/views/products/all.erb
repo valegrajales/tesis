@@ -1,0 +1,12 @@
+<h1 class="text-center">All products</h1>
+<div class="row">
+  <div class="span12">
+    <% if @found_products.empty? %>
+        <p class="lead">No products for this thesis.</p>
+    <% else %>
+        <%= render 'display_products', object: @found_products %>
+    <% end %>
+    <br/>
+    <%= link_to 'Back to thesis', thesis_path(params[:thesis_id]), class: 'btn btn-info' %>
+  </div>
+</div>

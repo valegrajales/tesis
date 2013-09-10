@@ -1,0 +1,25 @@
+<h1 class="text-center">New source</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@source, html: { multipart: true }) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="control-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'span6' %>
+          <%= f.label :description %>
+          <%= f.text_field :description, class: 'span6' %>
+          <%= f.label :reference %>
+          <%= f.text_field :reference, class: 'span6' %>
+          <%= f.label :source_type_id %>
+          <%= f.text_field :source_type_id, class: 'span6' %>
+          <%= label_tag 'Attachment' %>
+          <%= file_field 'upload', 'datafile' %>
+          <%= f.hidden_field :thesis_id %>
+        </div>
+
+        <div class="control-group">
+        <%= f.submit 'Create source', class: 'btn btn-primary' %>
+        </div>
+    <% end %>
+  </div>
+</div>

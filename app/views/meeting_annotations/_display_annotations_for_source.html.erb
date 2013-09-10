@@ -1,0 +1,17 @@
+<div class="list">
+  <ul>
+    <% object.each do |meeting_annotation| %>
+        <li>
+          <p class="lead"><%= meeting_annotation.title %></p>
+          <p class="annotation-content">
+            <% if meeting_annotation.content.length < 300 %>
+                <%= meeting_annotation.content %>
+            <% else %>
+                <%= meeting_annotation.content[0..299] %> (...).
+            <% end %>
+            <%= link_to 'More.', meeting_annotation %>
+          </p>
+        </li>
+    <% end %>
+  </ul>
+</div>

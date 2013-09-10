@@ -1,0 +1,23 @@
+<div class="list">
+  <ul>
+    <% object.each do |thesis| %>
+        <li>
+          <p class="lead"><%= thesis.title %></p>
+          <p class="annotation-content">
+            <%= thesis.description %>
+          </p>
+          <p class="annotation-content">
+            <strong>By: </strong>
+            <% thesis.students.each_with_index do |student, index| %>
+                <% if index < thesis.students.count - 1 %>
+                    <%= "#{student.name}, "%>
+                <% else %>
+                    <%= student.name %>
+                <% end %>
+            <% end %>
+          </p>
+          <p><%= link_to 'Show', thesis %></p>
+        </li>
+    <% end %>
+  </ul>
+</div>
