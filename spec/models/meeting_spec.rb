@@ -46,4 +46,10 @@ describe Meeting do
 
     it { should be_nil }
   end
+
+  describe 'when meeting_date is today' do
+    before { meeting.meeting_date = Date.today }
+    it { should be_valid }
+  end
+
 end

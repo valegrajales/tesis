@@ -86,4 +86,12 @@ describe Student do
     it { should_not be_valid }
   end
 
+  describe 'username already exist' do
+    let(:repeated_student_existence) { student.dup }
+    before { repeated_student_existence.id = nil }
+    subject { repeated_student_existence }
+
+    it { should_not be_valid }
+  end
+
 end

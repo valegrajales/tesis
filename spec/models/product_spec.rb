@@ -61,4 +61,9 @@ describe Product do
 
     it { should be_nil }
   end
+
+  describe 'when user visits page list products and thesis_id equals 201 and there\'s 10 products' do
+    let!(:thesis_id){201}
+    before {}
+  end
 end
